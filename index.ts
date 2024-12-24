@@ -13,6 +13,6 @@ export const handler = async (
   console.log(`Context: ${JSON.stringify(context)}`);
   return {
     statusCode: 200,
-    body: 'Hello World working',
+    body: 'Hello World working and harder work and gain more wealth:)',
   };
 };
