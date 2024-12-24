@@ -13,10 +13,10 @@ provider:
   region: ${env:AWS_REGION, 'us-west-2'}
   memorySize: 128
   timeout: 30
-  deploymentBucket:
-    name: simple-service-${self:provider.stage}
-    serverSideEncryption: AES256
-    blockPublicAccess: true
+  # deploymentBucket:
+  #   name: simple-service-${self:provider.stage}
+  #   serverSideEncryption: AES256
+  #   blockPublicAccess: true
   environment:
     LOG_LEVEL: debug
 # you can add packaging information here
