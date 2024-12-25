@@ -33,3 +33,7 @@ functions:
       - http:
           path: bye
           method: get
+
+  holiday:
+    handler: index.holiday
+    
