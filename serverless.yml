@@ -13,7 +13,7 @@ provider:
   region: ${env:AWS_REGION, 'us-west-2'}
   memorySize: 128
   timeout: 30
-   deploymentBucket:
+  deploymentBucket:
      name: simple-service-${self:provider.stage}
      serverSideEncryption: AES256
      blockPublicAccess: true
