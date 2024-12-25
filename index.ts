@@ -16,3 +16,15 @@ export const handler = async (
     body: 'Hello World. smarter work and gain more wealth',
   };
 };
+
+export const shopping = async (
+  event: APIGatewayEvent,
+  context: Context
+): Promise<APIGatewayProxyResult> => {
+  console.log(`Event: ${JSON.stringify(event)}`);
+  console.log(`Context: ${JSON.stringify(context)}`);
+  return {
+    statusCode: 200,
+    body: 'Big discount',
+  };
+};
