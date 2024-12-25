@@ -5,7 +5,7 @@ import {APIGatewayEvent, APIGatewayProxyResult, Context} from 'aws-lambda';
  * @param event
  * @param context
  */
-export const handler = async (
+var  handler = async (
   event: APIGatewayEvent,
   context: Context
 ): Promise<APIGatewayProxyResult> => {
@@ -18,8 +18,7 @@ export const handler = async (
 };
 
 
-
-export const shopping = async (
+var shopping = async (
   event: APIGatewayEvent,
   context: Context
 ): Promise<APIGatewayProxyResult> => {
@@ -31,7 +30,7 @@ export const shopping = async (
   };
 };
 
-export const holiday = async (
+var ho = async (
   event: APIGatewayEvent,
   context: Context
 ): Promise<APIGatewayProxyResult> => {
@@ -42,3 +41,7 @@ export const holiday = async (
     body: 'Big joy',
   };
 };
+
+exports.holiday = ho
+exports.shopping = shopping
+exports.handler = handler
