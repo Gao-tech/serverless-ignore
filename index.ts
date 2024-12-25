@@ -17,6 +17,8 @@ export const handler = async (
   };
 };
 
+
+
 export const shopping = async (
   event: APIGatewayEvent,
   context: Context
