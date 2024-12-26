@@ -1,5 +1,5 @@
 app: github-action-demo
-service: simple-rest-git-action-services
+service: simple-service
 frameworkVersion: '3'
 provider:
   name: aws
