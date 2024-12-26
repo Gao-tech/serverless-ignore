@@ -36,4 +36,11 @@ functions:
 
   holiday:
     handler: index.holiday
+
+  student:
+    handler: student.getstudent
+    events:
+      -http:
+         path: students
+         method: get
     
