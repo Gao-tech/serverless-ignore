@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - development
+      - main
 
 env:
   _ENVIRONMENT: development
@@ -20,9 +21,10 @@ jobs:
         node-version: [ 14.x ]
     env:
       _ENVIRONMENT: development
+      STAGE: development
     steps:
       - name: Print Name
-        run: echo "Hello this is our production $_ENVIRONMENT"
+        run: echo "hello this is our env $_ENVIRONMENT, Stage  $STAGE"
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
@@ -53,9 +55,10 @@ jobs:
         node-version: [ 14.x ]
     env:
       _ENVIRONMENT: production
+      STAGE: production
     steps:
       - name: print env stage
-        run: echo "hello this is our production $_ENVIRONMENT"
+        run: echo "hello this is our env $_ENVIRONMENT, Stage  $STAGE"
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
