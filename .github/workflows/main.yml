@@ -57,6 +57,7 @@ jobs:
     env:
       _ENVIRONMENT: production
       STAGE: production
+      AWS_REGION: eu-north-1
     steps:
       - name: print env stage
         run: echo "hello this is our env $_ENVIRONMENT, Stage  $STAGE"
