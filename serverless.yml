@@ -1,5 +1,5 @@
 app: github-action-demo
-service: simple_servicesless
+service: simple-service
 frameworkVersion: '3'
 provider:
   name: aws
@@ -38,4 +38,12 @@ functions:
 
   holiday:
     handler: index.holiday
+
+  student:
+    handler: student.getstudent
+    events:
+      - http:
+          path: students
+          method: get
+
     
