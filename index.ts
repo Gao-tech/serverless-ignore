@@ -38,10 +38,23 @@ var ho = async (
   console.log(`Context: ${JSON.stringify(context)}`);
   return {
     statusCode: 200,
-    body: 'Big joy',
+    body: 'joy',
   };
 };
 
 exports.holiday = ho
 exports.shopping = shopping
 exports.handler = handler
+
+
+var hodfq = async (
+  event: APIGatewayEvent,
+  context: Context
+): Promise<APIGatewayProxyResult> => {
+  console.log(`Event: ${JSON.stringify(event)}`);
+  console.log(`Context: ${JSON.stringify(context)}`);
+  return {
+    statusCode: 200,
+    body: '12344 joy',
+  };
+};
