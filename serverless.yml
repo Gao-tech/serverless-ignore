@@ -40,7 +40,7 @@ functions:
   student:
     handler: student.getstudent
     events:
-      -http:
-         path: students
-         method: get
+      - http:
+          path: students
+          method: get
     
