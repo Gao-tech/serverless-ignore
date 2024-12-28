@@ -31,6 +31,7 @@ functions:          # endpoints in lambda functions
 
   food:
       handler: index.goodfood
+      name: hello food
       events:
         - http:
             path: holiday
