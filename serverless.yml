@@ -1,12 +1,12 @@
 app: github-action-demo    
-service: simple-service    # Your projet name
+service: my-service
 frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs20.x
   stage: ${env:STAGE, self:custom.defaultStage}    #Define STAGE in serverless.yml
-  stackName: '${self:service}-${self:provider.stage}'
-  apiName: '${self:service}-${self:provider.stage}'
+  stackName: 'my-stack-${self:provider.stage}'
+  apiName: 'my-api-${self:provider.stage}'
   region: '${env:AWS_REGION, ''us-west-2''}'   # Ddfine AWS_REGION or use 'us-west-2'as default
   memorySize: 128
   timeout: 30
