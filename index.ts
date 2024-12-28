@@ -5,17 +5,6 @@ import {APIGatewayEvent, APIGatewayProxyResult, Context} from 'aws-lambda';
  * @param event
  * @param context
  */
-export const  handler = async (
-  event: APIGatewayEvent,
-  context: Context
-): Promise<APIGatewayProxyResult> => {
-  console.log(`Event: ${JSON.stringify(event)}`);
-  console.log(`Context: ${JSON.stringify(context)}`);
-  return {
-    statusCode: 200,
-    body: 'Hello World. smarter work and gain more wealth',
-  };
-};
 
 
 export const shopping = async (
@@ -26,11 +15,11 @@ export const shopping = async (
   console.log(`Context: ${JSON.stringify(context)}`);
   return {
     statusCode: 200,
-    body: 'Big discount',
+    body: 'Big discount for the holidays!',
   };
 };
 
-export const holiday = async (
+export const goodfood = async (
   event: APIGatewayEvent,
   context: Context
 ): Promise<APIGatewayProxyResult> => {

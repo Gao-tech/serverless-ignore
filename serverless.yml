@@ -1,13 +1,13 @@
-app: github-action-demo
-service: simple-service
+app: github-action-demo    
+service: my-service
 frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs20.x
-  stage: ${env:STAGE, self:custom.defaultStage}
-  stackName: '${self:service}-${self:provider.stage}'
-  apiName: '${self:service}-${self:provider.stage}'
-  region: '${env:AWS_REGION, ''us-west-2''}'
+  stage: ${env:STAGE, self:custom.defaultStage}    #Define STAGE in serverless.yml
+  stackName: 'my-stack-${self:provider.stage}'
+  apiName: 'my-api-${self:provider.stage}'
+  region: '${env:AWS_REGION, ''us-west-2''}'   # Ddfine AWS_REGION or use 'us-west-2'as default
   memorySize: 128
   timeout: 30
   environment:
@@ -21,23 +21,21 @@ plugins:
   - serverless-deployment-bucket
   - serverless-plugin-typescript
   - serverless-offline
-functions:
-  my_hello:
-    handler: index.handler
-    events:
-      - http:
-          path: hello
-          method: get
+functions:          # endpoints in lambda functions
+  shopping:         # describe function
+    handler: index.shopping   # filename.functionname
+    events:                   # trigger in API Gateway
+      - http:                 # http as trigger
+          path: festival      # 
+          method: get         # method
 
-  shopping:
-    handler: index.shopping
-    events:
-      - http:
-          path: bye
-          method: get
-
-  holiday:
-    handler: index.holiday
+  food:
+      handler: index.goodfood
+      name: hellofood
+      events:
+        - http:
+            path: holiday
+            method: get
 
   student:
     handler: student.getstudent
