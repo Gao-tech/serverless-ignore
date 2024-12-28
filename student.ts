@@ -13,6 +13,6 @@ export const  getstudent = async (
   console.log(`Context: ${JSON.stringify(context)}`);
   return {
     statusCode: 200,
-    body: 'student is gotten',
+    body: 'get the student',
   };
 };

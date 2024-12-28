@@ -15,7 +15,7 @@ export const shopping = async (
   console.log(`Context: ${JSON.stringify(context)}`);
   return {
     statusCode: 200,
-    body: 'Big discount',
+    body: 'Big discount for the holidays!',
   };
 };
 
