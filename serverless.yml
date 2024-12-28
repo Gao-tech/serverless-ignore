@@ -5,8 +5,8 @@ provider:
   name: aws
   runtime: nodejs20.x
   stage: ${env:STAGE, self:custom.defaultStage}    #Define STAGE in serverless.yml
-  stackName: 'my-stack-${self:provider.stage}'
-  apiName: 'my-api-${self:provider.stage}'
+  # stackName: 'my-stack-${self:provider.stage}'
+  # apiName: 'my-api-${self:provider.stage}'
   region: '${env:AWS_REGION, ''us-west-2''}'   # Ddfine AWS_REGION or use 'us-west-2'as default
   memorySize: 128
   timeout: 30
@@ -31,7 +31,7 @@ functions:          # endpoints in lambda functions
 
   food:
       handler: index.goodfood
-      name: hello food
+      name: hellofood
       events:
         - http:
             path: holiday
