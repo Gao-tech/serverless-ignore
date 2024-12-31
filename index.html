@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #333;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 14px;
+            cursor: pointer;
+            color: white;
+            background-color: #333;
+            border-bottom: 2px solid transparent;
+            transition: background-color 0.3s, border-bottom 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #444;
+        }
+
+        .tab.active {
+            border-bottom: 2px solid #f90;
+        }
+
+        .content {
+            padding: 20px;
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="tabs">
+    <div class="tab active" onclick="showContent('home')">Home</div>
+    <div class="tab" onclick="showContent('projects')">Projects</div>
+    <div class="tab" onclick="showContent('hobbies')">Hobbies</div>
+</div>
+
+<div id="home" class="content active">
+    <h1>Welcome to the Home Page</h1>
+    <p>This is the home section. Here you can find general information and updates.</p>
+</div>
+
+<div id="projects" class="content">
+    <h1>My Projects</h1>
+    <p>Explore my projects:</p>
+    <ul>
+        <li>Nutrition Tracker App</li>
+        <li>Portfolio Website</li>
+        <li>Web Scraping Tool for Job Hunting</li>
+    </ul>
+</div>
+
+<div id="hobbies" class="content">
+    <h1>My Hobbies</h1>
+    <p>In my free time, I enjoy:</p>
+    <ul>
+        <li>Cooking and experimenting with recipes</li>
+        <li>Practicing photography</li>
+        <li>Reading science fiction novels</li>
+    </ul>
+</div>
+
+<script>
+    function showContent(tabId) {
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.content');
+
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        contents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        document.querySelector(`.tab[onclick="showContent('${tabId}')"]`).classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
